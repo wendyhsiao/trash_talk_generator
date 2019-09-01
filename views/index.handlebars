@@ -1,0 +1,59 @@
+<div class="container mt-5">
+  <div class="row ">
+    <h1 class="mx-auto">你想對誰說幹話?</h1>
+  </div>
+
+  <form method="POST" action="/">
+    <div class="row mt-5 d-flex justify-content-center">
+      <div class="card mr-5 " style="width: 18rem;">
+        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg"
+          class="card-img-top">
+        <div class="card-body">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="target" id="engineer" value="engineer"
+              {{#ifEquals options.target "engineer" }}checked{{/ifEquals}}>
+            <label class="form-check-label" for="engineer">
+              工程師 </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mr-5" style="width: 18rem;">
+        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg"
+          class="card-img-top">
+        <div class="card-body">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="target" id="designer" value="designer"
+              {{#ifEquals options.target "designer"}}checked{{/ifEquals}}>
+            <label class="form-check-label" for="designer">
+              設計師 </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="card " style="width: 18rem;">
+        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg"
+          class="card-img-top">
+        <div class="card-body">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="target" id="entrepreneur" value="entrepreneur"
+              {{#ifEquals options.target "entrepreneur"}}checked{{/ifEquals}}>
+            <label class="form-check-label" for="entrepreneur">
+              創業家 </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row col-10 mt-5 mx-auto">
+      {{!-- <div class="input-group"> --}}
+      <button class="btn btn-success col-2 mr-3" type="submit">產生幹話</button>
+      <textarea class="form-control col-9" aria-label="With textarea">
+      {{#if trashTalk}}{{trashTalk}}
+      {{/if}}
+      </textarea>
+      {{!-- </div> --}}
+    </div>
+  </form>
+
+</div>
